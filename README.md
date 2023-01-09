@@ -16,26 +16,26 @@ The regulation of the temperature is done on the client side, by trying to keep 
 ## Installation
 ### 1. Clone repository
 
-    `
-    git clone git@github.com:shiflux/S7-protocol-example.git
-    `
+```
+git clone git@github.com:shiflux/S7-protocol-example.git
+```
 
 ### 2. Install python requirements
 
-    '
-    cd S7-protocol-example
-    pip3 install -r requirements.txt
-    '
+```
+cd S7-protocol-example
+pip3 install -r requirements.txt
+```
 
 ## Run instructions
 ### 2.1 Run server
 
-    `
-    python3 server.py
-    `
+```
+python3 server.py
+```
 
 ### 2.2 Run client
 
-    `
-    python3 client.py
-    `
+```
+python3 client.py
+```
