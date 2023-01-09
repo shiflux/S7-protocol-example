@@ -39,14 +39,13 @@ class CustomS7Client:
             current_temperature = snap7.util.get_real(data, 4)
             print(f'Current temperature {current_temperature:.2f}')
             if not machine_status and current_temperature>set_point+DELTA_TEMPERATURE:
-                command = bytearray(b'\x00\x00')
+                command = bytearray(2)
                 snap7.util.set_bool(command, 0, 0, True)
                 client.db_write(self._address, 0, command)
                 print('Sent machine ON')
             elif machine_status and current_temperature<set_point-DELTA_TEMPERATURE:
-                command = bytearray(b'\x00\x00')
-                # unnecessary since it's already False
-                # snap7.util.set_bool(command, 0, 0, False)
+                command = bytearray(2)
+                snap7.util.set_bool(command, 0, 0, False)
                 client.db_write(self._address, 0, command)
                 print('Sent machine OFF')
             time.sleep(1)
